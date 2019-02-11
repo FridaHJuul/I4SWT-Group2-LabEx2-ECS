@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECS.Refactored", "ECS.Refactored\ECS.Refactored.csproj", "{6EAA02FB-1D32-461D-A51B-1FE486288ACE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECS.Test.Unit", "ECS.Test.Unit\ECS.Test.Unit.csproj", "{58B4D4EA-4FE8-4404-80D4-AA3E43961062}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{6EAA02FB-1D32-461D-A51B-1FE486288ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EAA02FB-1D32-461D-A51B-1FE486288ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EAA02FB-1D32-461D-A51B-1FE486288ACE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58B4D4EA-4FE8-4404-80D4-AA3E43961062}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58B4D4EA-4FE8-4404-80D4-AA3E43961062}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58B4D4EA-4FE8-4404-80D4-AA3E43961062}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58B4D4EA-4FE8-4404-80D4-AA3E43961062}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

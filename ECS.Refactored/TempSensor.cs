@@ -2,7 +2,7 @@
 
 namespace ECS.Refactored
 {
-    internal class TempSensor : ISensor
+    public class TempSensor : ISensor
     {
         private Random gen = new Random();
 
