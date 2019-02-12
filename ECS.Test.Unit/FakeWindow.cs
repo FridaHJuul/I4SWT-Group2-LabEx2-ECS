@@ -9,14 +9,16 @@ namespace ECS.Test.Unit
 {
    public class FakeWindow : IRegulator
    {
+      public bool OnWasCalled = false;
+      public bool OffWasCalled = false;
       public void TurnOn()
       {
-         throw new NotImplementedException();
+         OnWasCalled = true;
       }
 
       public void TurnOff()
       {
-         throw new NotImplementedException();
+         OffWasCalled = true;
       }
 
       public bool RunSelfTest()

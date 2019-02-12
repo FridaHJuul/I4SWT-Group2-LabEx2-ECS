@@ -19,14 +19,14 @@
 
       public void Regulate()
       {
-         var t = _tempSensor.GetTemp();
+         var temperature = _tempSensor.GetTemp();
 
-         if (t < _heaterThreshold)
+         if (temperature < _heaterThreshold)
             _heater.TurnOn();
          else
             _heater.TurnOff();
 
-         if (t < _windowThreshold)
+         if (temperature < _windowThreshold)
             _window.TurnOff();
          else
             _window.TurnOn();
