@@ -33,8 +33,14 @@ namespace ECS.Refactored
             Console.WriteLine("Enter threshold for heater: ");
             string thresholdHeater = Console.ReadLine();
 
-            var thrWindow = Convert.ToInt64(thresholdWindow);
-            var thrHeater = Convert.ToInt64(thresholdHeater);
+            var thrWindow = Convert.ToInt16(thresholdWindow);
+            var thrHeater = Convert.ToInt16(thresholdHeater);
+
+            if (thrHeater < thrWindow)
+            {
+               ecs.SetHeaterThreshold(thrHeater);
+               ecs.SetWindowThreshold(thrWindow);
+            }
             
 
          }
