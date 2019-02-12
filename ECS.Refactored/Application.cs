@@ -10,14 +10,15 @@ namespace ECS.Refactored
    {
       static void Main(string[] args)
       {
-         IRegulator regulator = new Heater();
+         IRegulator heater = new Heater();
+         IRegulator window = new Window();
          ISensor sensor = new TempSensor();
 
-         var ecs = new ECS(28, sensor, regulator);
+         var ecs = new ECS(28, 28, sensor, heater, window);
 
          ecs.Regulate();
 
-         ecs.SetThreshold(20);
+         ecs.SetHeaterThreshold(20);
 
          ecs.Regulate();
 
