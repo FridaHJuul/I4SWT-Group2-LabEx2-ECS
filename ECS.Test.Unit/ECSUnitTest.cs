@@ -14,14 +14,16 @@ namespace ECS.Test.Unit
    {
       private Refactored.ECS uut;
       private FakeSensor _sensor;
-      private FakeHeater _regulator;
+      private FakeHeater _heater;
+      private FakeWindow _window;
 
       [SetUp]
       public void SetUp()
       {
          _sensor = new FakeSensor();
-         _regulator = new FakeHeater();
-         uut = new Refactored.ECS(28, _sensor, _regulator);
+         _heater = new FakeHeater();
+         _window = new FakeWindow();
+         uut = new Refactored.ECS(28,28, _sensor, _heater, _window);
       }
 
       [TestCase(-1)]
@@ -32,7 +34,7 @@ namespace ECS.Test.Unit
       {
          _sensor.Temp = temp;
          uut.Regulate();
-         Assert.That(_regulator.OnWasCalled, Is.True);
+         Assert.That(_heater.OnWasCalled, Is.True);
       }
 
       [TestCase(-1)]
@@ -43,7 +45,7 @@ namespace ECS.Test.Unit
       {
          _sensor.Temp = temp;
          uut.Regulate();
-         Assert.That(_regulator.OffWasCalled, Is.False);
+         Assert.That(_heater.OffWasCalled, Is.False);
       }
 
       [TestCase(28)]
@@ -53,7 +55,7 @@ namespace ECS.Test.Unit
       {
          _sensor.Temp = temp;
          uut.Regulate();
-         Assert.That(_regulator.OnWasCalled, Is.False);
+         Assert.That(_heater.OnWasCalled, Is.False);
       }
 
       [TestCase(28)]
@@ -63,7 +65,7 @@ namespace ECS.Test.Unit
       {
          _sensor.Temp = temp;
          uut.Regulate();
-         Assert.That(_regulator.OffWasCalled, Is.True);
+         Assert.That(_heater.OffWasCalled, Is.True);
       }
 
       [TestCase(28)]
@@ -71,8 +73,8 @@ namespace ECS.Test.Unit
       [TestCase(2500)]
       public void SetThreshold_ThresholdIsA_returnsA(int A)
       {
-         uut.SetThreshold(A);
-         Assert.That(uut.GetThreshold(),Is.EqualTo(A));
+         uut.SetHeaterThreshold(A);
+         Assert.That(uut.GetHeaterThreshold(),Is.EqualTo(A));
       }
 
       [TestCase(-10)]
